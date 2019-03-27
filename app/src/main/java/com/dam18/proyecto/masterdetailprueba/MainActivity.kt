@@ -21,14 +21,24 @@ class                MainActivity : AppCompatActivity() {
             if (savedInstanceState == null) {
                 supportFragmentManager
                         .beginTransaction()
-                        .add(R.id.fragments, Fragment.newInstance(), "Detalle")
+                        .add(R.id.fragment, Fragment.newInstance(), "Detalle")
                         .commit()
             }
         }
 
 
         NuevaActivity.setOnClickListener {
-            startActivity(intentFor<NewActivity>("id" to 5).singleTop())
+            if(txthorizontal != null){
+                   supportFragmentManager
+                        .beginTransaction()
+                        .add(R.id.fragment, Fragment.newInstance(), "Detalle")
+                        .commit()
+
+            }else{
+                startActivity(intentFor<NewActivity>("id" to 5).singleTop())
+            }
+
+
         }
 
 
