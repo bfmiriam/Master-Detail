@@ -8,6 +8,7 @@ import kotlinx.android.synthetic.main.activity_new.*
 
 class NewActivity : AppCompatActivity() {
 
+    //al abrir la nueva activity muestra un toast que lo indica ademas de un fragment
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_new)
@@ -17,6 +18,7 @@ class NewActivity : AppCompatActivity() {
         val valor =intent.getIntExtra("id",0)
         textNew.setText(valor.toString())
 
+        //muestra el fragment
         if (savedInstanceState == null) {
             supportFragmentManager
                     .beginTransaction()
